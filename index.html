@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #searchBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Search</h2>
+        <select id="diseaseSelect">
+            <option value="">Select Disease</option>
+            <!-- Add your disease options here -->
+            <option value="flu">Flu</option>
+            <option value="cold">Cold</option>
+            <option value="covid">COVID-19</option>
+        </select>
+        <select id="citySelect">
+            <option value="">Select City</option>
+            <!-- Add your city options here -->
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mumbai">Mumbai</option>
+        </select>
+        <button id="searchBtn" onclick="search()">Search</button>
+    </div>
+
+    <script>
+        function search() {
+            var disease = document.getElementById("diseaseSelect").value;
+            var city = document.getElementById("citySelect").value;
+
+            if (disease && city) {
+                // Redirect to search results page with selected parameters
+                window.location.href = "search-results.html?disease=" + disease + "&city=" + city;
+            } else {
+                alert("Please select both disease and city.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
